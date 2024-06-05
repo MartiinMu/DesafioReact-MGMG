@@ -5,11 +5,17 @@
 }
 
 .header {
-    background-color: pink;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
     align-items: center;
+    background-color: rgb(52, 52, 142);
+    padding: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+footer {
+    margin-top: 30rem;
 }
 
 .container {
@@ -29,8 +35,8 @@
 }
 
 .nav-link {
-    color :red;
     text-decoration: none;
+    color: white;
 }
 
 .nav-link.active {
@@ -60,10 +66,28 @@
 }
 
 .producto {
-    background-color: pink;
     border-radius: .5rem;
+    background-color: rgb(52, 52, 142);
     padding: 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
+
+.logo {
+    background-color: rgb(52, 52, 142);
+   color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+
+}
+
+.verMas {
+    font-size: 18px; /* Tamaño de fuente más grande */
+    font-family: Arial, sans-serif; /* Tipo de fuente alternativo */
+    color: #fff; /* Color de texto blanco */
+    text-decoration: none; /* Elimina la subrayado del enlace */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra negra suave */
+  }
+  
 
 .pokemons {
     display: flex;

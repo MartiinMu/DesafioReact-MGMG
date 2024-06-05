@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "nombre": "Camisa de algodón",
+        "precio": 29.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Camisa de algodón suave y cómoda para todas las ocasiones.",
+        "categoria" : {
+            "id": "ropa",
+            "nombre" : "Ropa"
+        }
+    },
+    {
+        "id": 2,
+        "nombre": "Pantalones vaqueros",
+        "precio": 39.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Pantalones vaqueros de estilo clásico para un look casual.",
+        "categoria" : {
+            "id": "ropa",
+            "nombre" : "Ropa"
+        }
+    },
+    {
+        "id": 3,
+        "nombre": "Zapatillas deportivas",
+        "precio": 49.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Zapatillas deportivas ideales para correr o hacer ejercicio.",
+        "categoria" : {
+            "id": "ropa",
+            "nombre" : "Ropa"
+        }
+    },
+    {
+        "id": 4,
+        "nombre": "Reloj de pulsera",
+        "precio": 99.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Reloj de pulsera elegante y funcional para complementar tu estilo.",
+        "categoria" : {
+            "id": "accesorios",
+            "nombre" : "Accesorios"
+        }
+    },
+    {
+        "id": 5,
+        "nombre": "Teléfono móvil",
+        "precio": 499.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Teléfono móvil de última generación con pantalla HD y cámara de alta resolución.",
+        "categoria" : {
+            "id": "tecnologia",
+            "nombre" : "Tecnologia"
+        }
+    },
+    {
+        "id": 6,
+        "nombre": "Tableta",
+        "precio": 299.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Tableta con pantalla táctil y procesador rápido para trabajo y entretenimiento.",
+        "categoria" : {
+            "id": "tecnologia",
+            "nombre" : "Tecnologia"
+        }
+    },
+    {
+        "id": 7,
+        "nombre": "Libro de ficción pdf",
+        "precio": 19.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Libro de ficción emocionante y bien escrito para disfrutar de una buena lectura.",
+        "categoria" : {
+            "id": "tecnologia",
+            "nombre" : "Tecnologia"
+        }
+    },
+    {
+        "id": 8,
+        "nombre": "Lámpara de escritorio",
+        "precio": 39.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Lámpara de escritorio ajustable y moderna para iluminar tu espacio de trabajo.",
+        "categoria" : {
+            "id": "tecnologia",
+            "nombre" : "Tecnologia"
+        }
+    },
+    {
+        "id": 9,
+        "nombre": "Cámara digital",
+        "precio": 199.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Cámara digital compacta y fácil de usar para capturar momentos especiales.",
+        "categoria" : {
+            "id": "tecnologia",
+            "nombre" : "Tecnologia"
+        }
+    },
+    {
+        "id": 10,
+        "nombre": "Botella de agua reutilizable",
+        "precio": 9.99,
+        "imagen": "http://placeholder.pics/svg/150",
+        "descripcion": "Botella de agua reutilizable y ecológica para llevar a todas partes.",
+        "categoria" : {
+            "id": "tecnologia",
+            "nombre" : "Tecnologia"
+        }
+    }
+]

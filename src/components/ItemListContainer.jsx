@@ -1,49 +1,46 @@
 import React, { useEffect, useState } from 'react'
-import data from '../data/productos.json'
+
 import { ItemList } from './ItemList'
 import { useParams } from 'react-router-dom';
-import categories from '../data/categorias.json'
+
+
+import {collection, getDocs, query, where} from "firebase/firestore"
+import {db} from "../firebase/config"
 
 export const ItemListContainer = () => {
 
-  let {categoryId} = useParams();
-
+let {categoryId} = useParams();
 let [productos,setProductos] = useState([])
 let [titulo, setTitulo] = useState("Productos");
 
 
-  const pedirProducto = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(()=>{
-        
-        resolve(data)   
-      },1000)
-      
+useEffect(() => {
 
-    })
+
+
+const productosReferencia = collection(db, "productos")
+const queryProductos = categoryId ? query(productosReferencia, where("categoria.id", "==", categoryId)) : productosReferencia
+
+const categoriasReferencia = collection(db, "categorias")
+let categoriaQuery = categoryId && query(categoriasReferencia, where("id", "==", categoryId))
+
+getDocs(queryProductos)
+  .then((res) => {
+    setProductos(
+      res.docs.map((doc) => {
+        return {...doc.data(), id: doc.id}
+      })
+    )
+  })
+
+  if (categoriaQuery) {
+    getDocs(categoriaQuery)
+      .then((res) => {
+        setTitulo(res.docs[0].data().nombre)
+      })
+  } else {
+    setTitulo("Productos")
   }
-
-
-
-
-
-
-  useEffect(()=>{
-    
-      pedirProducto()                        
-        .then((res) => {
-          
-          
-          if(categoryId){
-            setTitulo(categories.find((cat) => cat.id === categoryId).nombre)
-            setProductos(res.filter((prod) => prod.categoria.id === categoryId))
-          } else {
-            setTitulo("Productos")
-            setProductos(res)
-          }
-
-
-        })        
 
   },[categoryId])
 

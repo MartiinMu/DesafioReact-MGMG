@@ -7,8 +7,9 @@ export const Item = ({producto}) => {
           <br></br>
           <img src={producto.imagen}/>
           <h2>{producto.nombre}</h2>
-          <p>${producto.precio}</p>
+          <p>stock: {producto.stock}</p>
           <p>{producto.descripcion}</p>
+          <p>${producto.precio}</p>
           <br/><br/>
           <Link className='verMas' to={`/item/${producto.id}` }>Ver mas ✔ </Link>
           <br></br>

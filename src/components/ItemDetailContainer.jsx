@@ -1,32 +1,41 @@
-import { useParams } from 'react-router-dom'
-import data from '../data/productos.json'
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
+import { ItemDetail } from './ItemDetail';
+import { getDoc, doc } from 'firebase/firestore';
+import { db } from '../firebase/config';
 
+import data from '../data/productos.json'
 
 
 
 export const ItemDetailContainer = () => {
 
     let {itemId} = useParams();
-    let [producto, setProducto] = useState();
+    let [producto, setProducto] = useState(undefined);
+    let [loading, setLoading] = useState(true)
 
 
     useEffect(() => {
-        setProducto(data.find((prod) => prod.id === parseInt(itemId)))
+
+        const productoReferencia = doc(db, "productos", itemId)
+        getDoc(productoReferencia)
+          .then(res => {
+            if(res.data()) {
+              setProducto({ ...res.data(),id: res.id})
+            }
+            setLoading(false)
+          })
+
     }, [itemId])
 
 
 
-  return (
-    <div>
-    {producto && ( 
-        <>
-            <img src={producto.imagen} alt={producto.nombre} />
-            <h2>{producto.nombre}</h2>
-            <p>${producto.precio}</p>
-            <p>{producto.descripcion}</p>
-        </>
-    )}
-</div>
-  )
+    if(loading) {
+      return <div> Cargando ... </div>
+    } else if (producto) {
+      return <ItemDetail producto={producto}/> 
+    } else {
+      return <div>Producto no encontrado</div>
+    }
+
 }
